@@ -17,7 +17,7 @@ const fetchRemoteUrl = async (req, res) => {
 
   } catch (error) {
     // Check if the error is due to Aikido's SSRF protection
-    if (error.message && error.message.includes('Aikido firewall has blocked a server-side request forgery')) {
+    if (error.message && error.message.includes('Zen has blocked a server-side request forgery')) {
       console.error('Blocked by Aikido Security:', error);
       return res.status(403).json({ error: "Blocked by Security." });
     }
